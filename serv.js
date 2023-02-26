@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 const express=require('express');
 const app=express();
 
-
+var cors=require('cors')
+app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 mongoose.set('strictQuery', true);
@@ -35,6 +36,7 @@ const UserSchema = mongoose.Schema({
 
 })
 var model=mongoose.model('urls',UserSchema)
+app.use("/",express.static("view"))
 app.post('/', async (req, res) => {
 
 model.count({},(err,count)=>{
