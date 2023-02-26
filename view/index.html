@@ -1,80 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <input id="url" type="text" placeholder="enter url">
-    <button id="btn" onclick=geturl()>submit</button>
-    <div id="coint"></div>
-
-<script>
-async function geturl(){
-document.getElementById("coint").innerHTML=""
-let url=document.getElementById("url").value
-let data={name:url}
-
-var res=await fetch("http://localhost:8000", {
-  method: "POST",
-  headers: {'Content-Type': 'application/json'}, 
-  body: JSON.stringify(data)
-})
-
- res = await res.text()
- let but=document.createElement('button');
- but.innerText="copy";
- but.id="but"
- but.addEventListener('click',()=>{
-
-navigator.clipboard.writeText(res)
-document.getElementById("but").innerHTML="copied"
-setTimeout(()=>{
-    document.getElementById("but").innerHTML="copy"
-
-},1000)
-
- })
-
-
-document.getElementById("coint").innerHTML+=res;
-document.getElementById("coint").appendChild(but);
-
-
-}
-
-
-</script>
-
-
-</body>
-</html> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -126,8 +49,7 @@ document.getElementById("coint").appendChild(but);
         </div>
         <div id="coint">
 
-          <!-- <p id="damn">http://sort.onrender.com/10</p>
-          <button id="damn1">copy</button> -->
+         
 
         </div>
       
