@@ -36,9 +36,9 @@ const UserSchema = mongoose.Schema({
 })
 var model=mongoose.model('urls',UserSchema)
 app.post('/', async (req, res) => {
-console.log(req.body)
+
 model.count({},(err,count)=>{
-console.log(count);
+
 
 var obj={
 
