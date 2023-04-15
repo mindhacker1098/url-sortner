@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Kenia&display=swap');
+
+:root {
+    --input-border: #8b8a8b;
+    --input-focus-h: 245;
+    --input-focus-s: 100%;
+    --input-focus-l: 42%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.header{
+    background-color: rgba(56,23,237,255);
+    height: 7vw;
+    width: 100vw;
+    padding: 1rem;
+}
+
+.head_Title{
+    font-family: 'Kenia', cursive;
+    font-size: 2.7rem;
+    color: white;
+}
+
+
+.main{
+    margin: 17vh auto;
+    text-align: center;
+    
+}
+
+input[type="text"] {
+    border-top: 0;
+    border-left: 0;
+    width: 10em;
+    font-size: 2rem;
+    /* box-shadow: 10px 10px grey; */
+}
+
+/* input[type="text"]::after {
+    border-top: 0;
+    border-left: 0;
+} */
+
+
+#fetchedUrl{
+    color: black;
+    font-family: sans-serif;
+    font-size: 2rem;
+}
+
+.main p{
+    color: rgb(0, 0, 0);
+    /* font-family: sans-serif; */
+    font-family: 'Kenia', cursive;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+
+input {
+    font-size: 16px;
+    font-size: max(16px, 1em);
+    font-family: inherit;
+    padding: 0.25em 0.5em;
+    background-color: #fff;
+    border: 2px solid var(--input-border);
+    border-radius: 4px;
+  }
+
+  .button, button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 10px;
+    background-color: #008CBA;
+    color: white;
+    padding: 0.3rem 0.7rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.footer{
+    background-color: black;
+    height: 17vh;
+    width: 100vw;
+    position: absolute;
+    color: white;
+    text-align: center;
+    bottom: 0vh;
+    font-size: 2rem;
+}
+.footerShort{
+    font-size: 1rem;
+}
+a{
+    color: white;
+}
+.footer+p{
+    margin: 10px 0;
+
+}
+
+i{
+    font-size: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+    .header{
+        background-color: rgba(56,23,237,255);
+        height: 15vw;
+        width: 100vw;
+        padding: 1rem;
+    }
+    .head_Title{
+        font-family: 'Kenia', cursive;
+        font-size: 3em;
+        color: white;
+    }
+
+    input[type="text"] {
+        border-top: 0;
+        border-left: 0;
+        font-size: 1.5rem;
+    }
+        
+}
+@media screen and (max-width: 500px) {
+    #fetchedUrl{
+        color: black;
+        font-family: sans-serif;
+        font-size: 1rem;
+    }
+}
