@@ -29,6 +29,10 @@ const UserSchema = mongoose.Schema({
     sorturl: {
         type: String,
         required: true
+    },
+    iip:{
+
+        type:String
     }
    
 
@@ -38,6 +42,7 @@ const UserSchema = mongoose.Schema({
 var model=mongoose.model('urls',UserSchema)
 app.use("/",express.static("view"))
 app.post('/', async (req, res) => {
+    
 
 model.count({},(err,count)=>{
 
@@ -45,7 +50,8 @@ model.count({},(err,count)=>{
 var obj={
 
     mainurl:req.body.name,
-    sorturl:`https://sort.onrender.com/${count+1}`
+    sorturl:`https://sort.onrender.com/${count+1}`,
+    iip:req.ip
     
     }
     
