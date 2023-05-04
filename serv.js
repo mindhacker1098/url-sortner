@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const express=require('express');
 const app=express();
-
+app.set('trust proxy',true);
 var cors=require('cors')
 app.use(cors())
 app.use(express.json());
@@ -30,7 +30,7 @@ const UserSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    iip:{
+    ip:{
 
         type:String
     }
@@ -42,7 +42,8 @@ const UserSchema = mongoose.Schema({
 var model=mongoose.model('urls',UserSchema)
 app.use("/",express.static("view"))
 app.post('/', async (req, res) => {
-    var loli=req.ip
+   
+    
 
 model.count({},(err,count)=>{
 
@@ -51,8 +52,8 @@ var obj={
 
     mainurl:req.body.name,
     sorturl:`https://sort.onrender.com/${count+1}`,
-    iip:loli
-    
+
+    ip:req.ip
     }
     
 

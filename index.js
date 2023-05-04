@@ -3,7 +3,7 @@ async function geturl(){
     let url=document.getElementById("url").value
     let data={name:url}
     
-    var res=await fetch("https://sort.onrender.com", {
+    var res=await fetch("http://localhost:8000", {
       method: "POST",
       headers: {'Content-Type': 'application/json'}, 
       body: JSON.stringify(data)
