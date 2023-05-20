@@ -29,11 +29,8 @@ const UserSchema = mongoose.Schema({
     sorturl: {
         type: String,
         required: true
-    },
-    ip:{
-
-        type:String
     }
+   
    
 
   
@@ -51,9 +48,9 @@ model.count({},(err,count)=>{
 var obj={
 
     mainurl:req.body.name,
-    sorturl:`https://sort.onrender.com/${count+1}`,
+    sorturl:`https://sort.onrender.com/${count+1}`
 
-    ip:req.ip
+    // ip:req.ip
     }
     
 
