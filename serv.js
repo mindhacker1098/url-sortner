@@ -42,7 +42,7 @@ app.post('/', async (req, res) => {
    
     
 
-model.count({},(err,count)=>{
+count=await model.count({})
 
 
 var obj={
@@ -50,28 +50,29 @@ var obj={
     mainurl:req.body.name,
     sorturl:`https://sort.onrender.com/${count+1}`
 
-    // ip:req.ip
+    
     }
     
 
 
     const o_url = new model(obj)
-    const ans=o_url.save((err)=>{
+    const ans= await o_url.save()
 
 
-        if(err){
-            res.send("error") 
-        }
-        else{
-            res.send(obj.sorturl)
+       if(ans){
+        
+            res.send(obj.sorturl)}
+            else{
+                res.send("error");
+            }
             
-        }
+        
 
 
-    })
+    
     
 
-});
+
 
 
   
@@ -83,7 +84,7 @@ app.get('/:name',async (req,res)=>{
 
 var surl;
 
-model.find({sorturl:"https://sort.onrender.com/"+req.params.name},(err,item)=>{
+let item = await model.find({sorturl:"https://sort.onrender.com/"+req.params.name})
     try{
 
 surl=item[0].mainurl;
@@ -93,7 +94,6 @@ catch(exp){
     res.send("page not found")
 }
 
-})
 
 
 })
